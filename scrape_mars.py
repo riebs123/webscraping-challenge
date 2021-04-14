@@ -61,9 +61,13 @@ def scrape():
     table = pd.read_html('https://galaxyfacts-mars.com/')
 
     mars_facts = table[0]
-    
-    mars_facts_html = mars_facts.to_html()
 
+    mars_facts = mars_facts.set_index([0])
+
+    mars_facts.columns = mars_facts.iloc[0]
+    mars_facts = mars_facts.iloc[1:]
+
+    mars_facts_html = mars_facts.to_html()
     mars_facts_html = mars_facts_html.replace('\n', '')
 
     # Visit https://marshemispheres.com/ for hemispheres of Mars
