@@ -34,10 +34,9 @@
     <div class="row">
       <h3 class="text-center">Mars Hemispheres</h3>
     </div>
-
-    {% for hemisphere in mars.hemisphere_dict %}
     <div class="row">
-      <div class="col-md-3">
+    {% for hemisphere in mars.hemisphere_dict %}
+      <div class="col">
         <div class="thumbnail">
       <img src="{{ hemisphere.img_url }}" alt="Hemispheres", class="img-fluid">
           <div class="caption">
